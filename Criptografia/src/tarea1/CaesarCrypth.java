@@ -37,13 +37,17 @@ public class CaesarCrypth {//begin class
 
 				for (int i = 0; i < encrypted.length; i++) {//first run this for wich will cover the whole word to encode
 						for (int j= 0; j < abc.length; j++) {//here we will codify the word
+							if(encrypted[i]==' '){
+								break
+							}else{
 								if(encrypted[i]==abc[j]) {//here it finds the letter in the alphabet stored in abc,
 										aux=j+key;//saves the key into a auxiliar variable
 											if(aux>abc.length) {//deal with wrap around
-													aux-=26;
-													}
-												encrypted[i]=abc[aux];//saves the new letter into the selected space
-												break;//returns to the first for
+														aux-=26;
+														}
+													encrypted[i]=abc[aux];//saves the new letter into the selected space
+													break;//returns to the first for
+												}
 											}
 										}
 									}
@@ -65,13 +69,17 @@ public class CaesarCrypth {//begin class
 					encrypted=input.toCharArray();//<- saved!
 					for (int i = 0; i < encrypted.length; i++) {//first run this for wich will cover the whole word to encode
 						for (int j= 0; j < abc.length; j++) {//here we will codify the word
-							if(encrypted[i]==abc[j]) {//here it finds the letter in the alphabet stored in abc,
-								aux=j-key;//saves the key into a auxiliar variable
-								if(aux<abc.length) {//deal with wrap around
-									aux+=26;
-								}
-						encrypted[i]=abc[aux];//saves the new letter into the selected space
-						break;//returns to the first for
+							if (encrypted[i]==' ') {
+								break;
+							}else{
+								if(encrypted[i]==abc[j]) {//here it finds the letter in the alphabet stored in abc,
+									aux=j-key;//saves the key into a auxiliar variable
+									if(aux<abc.length) {//deal with wrap around
+										aux+=26;
+									}
+								encrypted[i]=abc[aux];//saves the new letter into the selected space
+							break;//returns to the first for
+						}
 					}
 				}
 			}
