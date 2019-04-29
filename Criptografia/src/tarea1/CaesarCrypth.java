@@ -90,4 +90,12 @@ public class CaesarCrypth {//begin class
 			break;//end second case
 	}//end switch-case
 	}//end main
+	public char[] llenarDeAscii(char chararr[]){//begin function
+		char inp='\0';
+		for(int k=0; k < chararr.length; k++){
+			chararr[k]=inp;
+			inp++;
+		}
+		return chararr[];
+	}//end function
 }//end class
